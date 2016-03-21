@@ -1,0 +1,19 @@
+{
+    "name"                  : "salaros/mr-press-child-theme",
+    "description"           : "A child theme of Mr. Press default theme, it's a starting point for your projects",
+    "type"                  : "wordpress-theme",
+    "license"               : "MIT",
+    "authors"               : [
+        {
+            "name"          : "Zhmayev Yaroslav",
+            "email"         : "salaros@salaros.com",
+            "homepage"      : "https://github.com/salaros",
+            "role"          : "Developer"
+        }
+    ],
+    "require": {
+        "salaros/mr-press-theme"            : "*"
+    },
+    "minimum-stability"                     : "stable",
+    "prefer-stable"                         : true
+}
