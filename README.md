@@ -1,3 +1,3 @@
 # Mr. Press child theme
 
-A child theme of Mr. Press default theme, you should start your development from this code base
+A child theme of Mr. Press default theme, it's a starting point for your projects.
