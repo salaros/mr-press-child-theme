@@ -19,15 +19,6 @@
         "bower-asset/respond"               : "~1.4.0",
         "bower-asset/html5shiv"             : "~3.7.0"
     },
-    "config": {
-        "vendor-dir"                        : "../../../vendor"
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library"             : "../../npm-asset",
-            "bower-asset-library"           : "../../bower-asset"
-        }
-    },
     "minimum-stability"                     : "stable",
     "prefer-stable"                         : true
 }
