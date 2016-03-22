@@ -1,6 +1,6 @@
 <?php
 
-if ( ! class_exists( 'Timber' ) ) {
+if ( !class_exists( 'Timber' ) ) {
     return;
 }
 
