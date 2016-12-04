@@ -40,5 +40,8 @@
         }
     },
     "minimum-stability"                     : "stable",
-    "prefer-stable"                         : true
+    "prefer-stable"                         : true,
+    "config" : {
+        "secure-http"                       : false
+    }
 }
