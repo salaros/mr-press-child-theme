@@ -11,8 +11,7 @@ $site->add_script( 'site', sprintf( '%s/static/js/site.js', $site->theme->link) 
 //this is where you can add your CSS entries
 $site->add_style( 'normalize', sprintf( '%s/normalize.css/normalize.css', $bower_url ) );
 $site->add_style( 'bootstrap', sprintf( '%s/bootstrap/dist/css/bootstrap.min.css', $bower_url ) );
-$site->add_style( 'mr-press', sprintf( '%s/style.css', $site->theme->parent->link );
+$site->add_style( 'mr-press', sprintf( '%s/style.css', $site->theme->parent->link ) );
 
 //this is where you can add your CSS entries for wp-admin UI
 $site->add_admin_style( 'custom-admin', sprintf( '%s/css/admin.css', $site->theme->static_url ) );
-

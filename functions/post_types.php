@@ -19,16 +19,16 @@ $book_labels = array(
     'not_found_in_trash' => __( 'No books found in Trash.', $text_domain )
 );
 
-$event_args = array(
-    'labels'             => $event_labels,
-    'description'        => __( 'Event description.', $text_domain ),
+$book_args = array(
+    'labels'             => $book_labels,
+    'description'        => __( 'Book description.', $text_domain ),
     'public'             => true,
     'publicly_queryable' => true,
     'exclude_from_search'=> false,
     'show_ui'            => true,
     'show_in_menu'       => true,
     'query_var'          => true,
-    'rewrite'            => array( 'slug' => 'event' ),
+    'rewrite'            => array( 'slug' => 'books' ),
     'capability_type'    => 'post',
     'menu_icon'          => 'dashicons-book',  // !!! set a custom Dashicons icon here
     'can_export'         => true,
