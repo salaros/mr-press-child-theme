@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e07ce45ce3c9d1355c44c8d0895497c3",
-    "content-hash": "33e610abd48a780b5bb6857d47545829",
+    "content-hash": "0da5f100415676c7ce9c785bbcc60f9a",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -271,20 +270,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "fxp/composer-asset-plugin",
-            "version": "v1.1.4",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/composer-asset-plugin.git",
-                "reference": "c3d803cc890fad5a7fb61a4036c5d973faae34af"
+                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/c3d803cc890fad5a7fb61a4036c5d973faae34af",
-                "reference": "c3d803cc890fad5a7fb61a4036c5d973faae34af",
+                "url": "https://api.github.com/repos/fxpio/composer-asset-plugin/zipball/60bc94db574103dfc73acb907fa79c6dfc86c96e",
+                "reference": "60bc94db574103dfc73acb907fa79c6dfc86c96e",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +297,7 @@
             "extra": {
                 "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -317,7 +316,7 @@
                 }
             ],
             "description": "NPM/Bower Dependency Manager for Composer",
-            "homepage": "https://github.com/francoispluchino/composer-asset-plugin",
+            "homepage": "https://github.com/fxpio/composer-asset-plugin",
             "keywords": [
                 "asset",
                 "bower",
@@ -327,20 +326,20 @@
                 "npm",
                 "package"
             ],
-            "time": "2016-04-22 08:48:58"
+            "time": "2016-10-12T08:03:45+00:00"
         },
         {
             "name": "salaros/mr-press-theme",
-            "version": "0.4.8",
+            "version": "0.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salaros/mr-press-theme.git",
-                "reference": "e2fae2b722f166576e1baf317bd9bf6b09331975"
+                "reference": "c3bcdf167f959378ffac10de92dd410f1bd75faa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salaros/mr-press-theme/zipball/e2fae2b722f166576e1baf317bd9bf6b09331975",
-                "reference": "e2fae2b722f166576e1baf317bd9bf6b09331975",
+                "url": "https://api.github.com/repos/salaros/mr-press-theme/zipball/c3bcdf167f959378ffac10de92dd410f1bd75faa",
+                "reference": "c3bcdf167f959378ffac10de92dd410f1bd75faa",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +378,7 @@
                 }
             ],
             "description": "Makes part of Mr. Press project. You should not change its code, please use 'mr-press-theme-child' instead",
-            "time": "2016-11-25 10:15:05"
+            "time": "2016-12-04T14:47:37+00:00"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
@@ -403,15 +402,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-my-login",
-            "version": "6.4.6",
+            "version": "6.4.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/theme-my-login/",
-                "reference": "tags/6.4.6"
+                "reference": "tags/6.4.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -423,15 +422,15 @@
         },
         {
             "name": "wpackagist-plugin/timber-library",
-            "version": "1.1.10",
+            "version": "1.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/1.1.10"
+                "reference": "tags/1.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.1.1.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/timber-library.1.2.4.zip",
                 "reference": null,
                 "shasum": null
             },

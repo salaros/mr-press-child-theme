@@ -19,7 +19,7 @@
     ],
     "require": {
         "salaros/mr-press-theme"            : "*",
-        "fxp/composer-asset-plugin"         : "~1.1.0",
+        "fxp/composer-asset-plugin"         : "~1.2.0",
         "bower-asset/normalize.css"         : "~3.0.0",
         "bower-asset/bootstrap"             : "~3.3.0",
         "bower-asset/respond"               : "~1.4.0",
