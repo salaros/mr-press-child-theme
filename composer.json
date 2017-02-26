@@ -23,7 +23,9 @@
         "bower-asset/normalize.css"         : "~3.0.0",
         "bower-asset/bootstrap"             : "~3.3.0",
         "bower-asset/respond"               : "~1.4.0",
-        "bower-asset/html5shiv"             : "~3.7.0"
+        "bower-asset/html5shiv"             : "~3.7.0",
+        "bower-asset/semantic"              : "~2.2.0",
+        "wpackagist-plugin/wp-postviews"                        : "*"
     },
     "extra": {
         "asset-installer-paths": {

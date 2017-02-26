@@ -1,0 +1,142 @@
+body.pushable,
+body.pushable > .pusher {
+    background: #eee !important;
+}
+
+/* Part of sticky footer solution */
+body.pushable > .pusher {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* Part of sticky footer solution */
+body.pushable > .pusher > main.container {
+    flex: 1
+}
+
+.ui.main.container {
+    padding-top: 6em !important;
+    padding-bottom: 2em !important;
+}
+
+/* ------ MENUS (ALL PAGES) ------ */
+.ui.menu.top.fixed.secondary.pointing {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: opacity;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    /* ------ MENUS (ALL PAGES) ------ */
+    .ui.menu.secondary.pointing > .item,
+    .ui.menu.secondary.pointing > .ui.container > .item {
+        display: none !important;
+    }
+    .ui.menu.secondary.pointing > .item.toc,
+    .ui.menu.secondary.pointing > .ui.container > .item.toc {
+        display: block !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* ------ MENUS FIXED (ALL PAGES) ------ */
+    .ui.menu.top.fixed.secondary.pointing {
+        padding: 0.2em 1em !important;
+        background-color: #2F4F4F !important; /* CodeCave #2F4F4F | Black #1B1C1D */
+    }
+    .ui.menu.top.fixed.secondary.pointing .ui.inverted.button {
+        box-shadow: 0 0 0 2px #fff inset !important;
+        border-color: #fff !important;
+        color: #fff !important;
+    }
+    .ui.menu.top.fixed.secondary.pointing .ui.inverted.button:hover {
+        background-color: #fff !important;
+        color: #1B1C1D !important;
+    }
+}
+
+/*********************************************/
+/***********   SEMANTIC FIXES  ***************/
+/*********************************************/
+
+/* Hide hidden menu :) and "hamburger" icon when needed */
+.ui.menu.hidden,
+.ui.menu.secondary.pointing .toc.item {
+    display: none;
+}
+
+/* In Semantic UI secondary menu (we are obligated to use) */
+/* in */
+.ui.menu.top.fixed.secondary.pointing {
+    background-color: #fff;
+}
+
+/* UI lists in menus have white color (for some reason) */
+/* so had to force it being black */
+.ui.menu .language.popup > .ui.list > .item  {
+    color: black !important
+}
+
+/* Added extra padding to fixed (white) menu */
+.ui.menu.home > .menu.right,
+.ui.menu.top.fixed.secondary.pointing > .ui.container > .menu.right,
+.ui.menu.fixed > .ui.container > .menu.right {
+    margin-top: 0.2em !important;
+    margin-bottom: 0.2em !important;
+}
+
+/* Allow column cards to be displayed correctly */
+.ui.card.column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Allow very padded text on cards */
+.ui.card > .very.padded.text.content {
+    padding: 2em !important;
+}
+
+/* Justify text, haven't found an easy way of accomplishing it in Semantic UI */
+.justified.text {
+    text-align: justify
+}
+
+/* Text in inverted items MUST stay white */
+.ui.items > .item > .content .inverted {
+    color: #fff !important;
+}
+
+/* Remove useless border from transparent menues */
+.masthead .ui.menu {
+    border: none !important;
+    border-color: transparent !important;
+}
+
+/* Add text shadow to transarent menu */
+.masthead .ui.menu > .item {
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 3px;
+}
+
+@media only screen and (max-width: 767px) {
+    /* Enforce a more premissive "tablet/computer only" mode (in terms of class prerequisites) */
+    .ui[class*="tablet only"]:not(.mobile),
+    .ui[class*="computer only"]:not(.mobile) {
+        display: none !important
+    }
+    /* Make label details look more compact on mobile */
+    .ui.label > .detail {
+        margin-left: 0.2em;
+    }
+    /* Allow very padded text on cards on mobile */
+    .ui.card > .very.padded.text.content {
+        padding: 1.5em !important;
+    }
+    /* Fix text area fields on mobile */
+    .field > textarea {
+        width: 100%
+    }
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0da5f100415676c7ce9c785bbcc60f9a",
+    "content-hash": "62585ff062a67a5fb300fc5ed99ce2ac",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -164,6 +164,45 @@
                 ]
             },
             "description": "Fast and lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)"
+        },
+        {
+            "name": "bower-asset/semantic",
+            "version": "2.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Semantic-Org/Semantic-UI.git",
+                "reference": "6389e62e204e1e6a792cdbb29cd23b65112947c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Semantic-Org/Semantic-UI/zipball/6389e62e204e1e6a792cdbb29cd23b65112947c1",
+                "reference": "6389e62e204e1e6a792cdbb29cd23b65112947c1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "src/semantic.less",
+                    "dist/semantic.js"
+                ],
+                "bower-asset-ignore": [
+                    "src/site",
+                    "test"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Semantic empowers designers and developers by creating a shared vocabulary for UI.",
+            "keywords": [
+                "css3",
+                "framework",
+                "semantic",
+                "ui"
+            ]
         },
         {
             "name": "composer/installers",
@@ -330,16 +369,16 @@
         },
         {
             "name": "salaros/mr-press-theme",
-            "version": "0.4.9",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/salaros/mr-press-theme.git",
-                "reference": "c3bcdf167f959378ffac10de92dd410f1bd75faa"
+                "reference": "79ccd287cf3258011b1ab7687ce802d78d324b30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/salaros/mr-press-theme/zipball/c3bcdf167f959378ffac10de92dd410f1bd75faa",
-                "reference": "c3bcdf167f959378ffac10de92dd410f1bd75faa",
+                "url": "https://api.github.com/repos/salaros/mr-press-theme/zipball/79ccd287cf3258011b1ab7687ce802d78d324b30",
+                "reference": "79ccd287cf3258011b1ab7687ce802d78d324b30",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +417,7 @@
                 }
             ],
             "description": "Makes part of Mr. Press project. You should not change its code, please use 'mr-press-theme-child' instead",
-            "time": "2016-12-04T14:47:37+00:00"
+            "time": "2017-02-26T17:22:35+00:00"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
@@ -391,7 +430,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip",
-                "reference": null,
+                "reference": "tags/4.4.11",
                 "shasum": null
             },
             "require": {
@@ -411,7 +450,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.9.zip",
-                "reference": null,
+                "reference": "tags/6.4.9",
                 "shasum": null
             },
             "require": {
@@ -431,7 +470,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/timber-library.1.2.4.zip",
-                "reference": null,
+                "reference": "tags/1.2.4",
                 "shasum": null
             },
             "require": {
@@ -439,6 +478,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/timber-library/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-postviews",
+            "version": "1.74",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-postviews/",
+                "reference": "tags/1.74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-postviews.1.74.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-postviews/"
         }
     ],
     "packages-dev": [],
