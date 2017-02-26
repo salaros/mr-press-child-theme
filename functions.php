@@ -10,6 +10,7 @@ $site = new WordPressSite;
 
 $site->ui_toolkit = 'semantic-ui';
 
+require_once 'functions/constants.php';
 require_once 'functions/menus.php';
 require_once 'functions/post_types.php';
 require_once 'functions/scripts_styles.php';
