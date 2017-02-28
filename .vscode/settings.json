@@ -4,5 +4,10 @@
     "files.exclude": {
         "**/*.bak*": true,
         "**/vendor": true
+    },
+    "less.compile": {
+        "compress":  false,  // true => remove surplus whitespace
+        "sourceMap": true,   // true => generate source maps (.css.map files)
+        "out":       true    // true => output .css files (overridable per-file, see below)
     }
 }
