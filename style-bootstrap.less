@@ -1,0 +1,32 @@
+@lightgrey: #f5f5f5;
+@navbar_height: 60px;
+
+ul.nav-login {
+	.dropdown-form {
+		padding: 15px;
+		min-width: 250px;
+	}
+}
+ul.nav-search-from {
+	.dropdown-search {
+		padding: 15px;
+		min-width: 480px;
+	}
+}
+footer.page-footer {
+	/* negative value of footer height */
+	margin-top: -@navbar_height;
+	height: @navbar_height;
+	clear: both;
+	padding-top: 20px;
+	width: 100%;
+	background-color: @lightgrey;
+}
+section.container-main {
+	/* 100% - navbar height + navbar bottom border */
+	min-height: 100%;
+	min-height: calc(~"100% - 71px");
+}
+section.page-pagination {
+	margin-bottom: @navbar_height;
+}
