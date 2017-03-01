@@ -9,7 +9,7 @@
             <div class="menu" tabindex="-1">
                 {% for children in item.get_children %}
                 <div class="item {{ children.classes | join(' ') }} {{ (children.current) ? 'active' : '' }}">
-                    <a href="{{ children.get_link }}">{{ children.title }}</a>
+                    <a class="ui link" href="{{ children.get_link }}">{{ children.title }}</a>
                 </div>
                 {% endfor %}
             </div>
