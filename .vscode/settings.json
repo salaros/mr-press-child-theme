@@ -2,8 +2,9 @@
 {
     "phpcs.standard": "WordPress-Extra",
     "files.exclude": {
-        "**/*.bak*": true,
-        "**/vendor": true
+        "**/*.bak*":    true,
+        "**/*.css.map": true,
+        "**/vendor":    true
     },
     "less.compile": {
         "compress":  false,  // true => remove surplus whitespace
