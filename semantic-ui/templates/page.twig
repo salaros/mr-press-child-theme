@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content_inner %}
+<main class="ui main container">
+{% block the_title %}
+    {% if post.title %}
+    <h1 class="ui header">
+        {{ post.title }}
+    </h1>
+    {% endif %}
+{% endblock the_title %}
+
+{% block the_content %}
+    {% if function('have_posts') %}
+        {% set post = function('the_post') %}
+        {{ function('the_content')|wpautop }}
+    {% endif %}
+{% endblock the_content%}
+</main>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% set date_today_raw = "now"|date("Y-m-d H:i:s") %}
+{% set date_today = function('date_create', date_today_raw) %}
+<div class="ui comments">
+
+    <!-- Comments no.{{ post.comment_count }} -->
+
+    {% for comment in post.get_comments() %}
+        {% include 'comment.twig' %}
+    {% endfor %}
+
+    {% if post.comment_status == 'open' %}
+    <div class="ui reply form">
+        {{ comment_form }}
+    </div>
+    {% endif %}
+</div>

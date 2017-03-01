@@ -1,0 +1,88 @@
+{# register.twig #}
+<section id="theme-my-login{{ template_id }}" class="ui middle aligned center aligned grid" data-template="register.twig">
+
+    <div class="ui fourteen wide computer   fourteen wide tablet   sixteen wide mobile   form-holder   column">
+
+        <form class="ui form segment registerform" id="registerform{{ template_id }}" action="{{ register_url }}" method="post" role="form">
+            
+            <h3 class="ui header">
+                <div class="ui divider hidden"></div>
+                {{ 'Create a new account'|translate }}
+                <div class="ui divider hidden"></div>
+            </h3>
+
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input name="user_login" placeholder="{{ 'Username'|translate }}" type="text" id="user_login{{ template_id }}" required />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="at icon"></i>
+                        <input name="user_email" placeholder="{{ 'Email'|translate }}" type="email" id="user_email{{ template_id }}" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input name="pass1" placeholder="{{ 'Password'|translate }}" pwfprops="," type="password" id="pass1{{ template_id }}" size="20" required />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input name="pass2" placeholder="{{ 'Confirm Password'|translate }}" pwfprops="," type="password" id="pass2{{ template_id }}" size="20" required />
+                    </div>
+                </div>
+
+            </div>
+
+            {{ function ('do_action','register_form' ) }}
+
+            <div class="inline field">
+                <div class="g-recaptcha-outer ui ignored message">
+                    <div class="g-recaptcha-inner">
+                        <div class="g-recaptcha" data-size="compact" data-sitekey="{{ constant('GOOGLE_RECAPTCHA_SITE_KEY') }}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui grid   field   center aligned">
+                <button class="ui fluid large primary submit button    nine wide computer   sixteen wide tablet   sixteen wide mobile   column" type="submit">
+                    {{ 'Sign up'|translate }}
+                </button>
+            </div>
+
+            <div class="ui error message"></div>
+
+            {% if template_the_errors %}
+                <div class="ui error message   visible">
+                {{ template_the_errors|translate }}
+                </div>
+            {% endif %}
+
+            {#% if template_messages %}
+                <div class="ui info message   visible">
+                {{ template_messages|translate }}
+                </div>
+            {% endif %#}
+
+            <input type="hidden" name="redirect_to" value="{{ redirect_to|default(register_redirect_url) }}" />
+            <input type="hidden" name="instance" value="{{ template_id }}" />
+            <input type="hidden" name="action" value="register" />
+        </form>
+
+        <div class="ui message info visible">
+            <i class="icon warning circle medium"></i>
+            Already have an account? <a href="{{ function('wp_login_url', register_redirect_url) }}">{{ 'Sign in'|translate }}</a>
+        </div>
+    </div>
+
+</section>

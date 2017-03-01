@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content_inner %}
+<main class="ui container middle aligned center aligned grid login">
+    <div class="ui eight wide computer   twelve wide tablet   sixteen wide mobile column">
+
+        <div class="ui divider hidden"></div>
+        
+        {% if function('have_posts') %}
+            {% set post = function('the_post') %}
+            {{ function('the_content')|wpautop }}
+        {% endif %}
+
+        <div class="ui divider hidden"></div>
+
+    </div>
+</main>
+
+{% endblock %}
+
+{% block footer %}
+<!-- footer is disabled -->
+{% endblock %}

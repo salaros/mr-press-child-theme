@@ -1,0 +1,8 @@
+{% set search_placeholder = 'Search for:'|translate('label')|replace({':': ''}) %}
+<div class="menu inverted">
+    <div class="header">{{ 'Search'|translate }}</div>
+    <div class="ui icon search input">
+        <i class="search icon"></i>
+        <input placeholder="{{ search_placeholder }}" type="text">
+    </div>
+</div>

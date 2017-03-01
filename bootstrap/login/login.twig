@@ -1,0 +1,65 @@
+{# login.twig #}
+<div class="login" id="theme-my-login{{ template_id }}" data-template="login.twig">
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            {% if template_messages %}
+            <div class="alert alert-info template_messages">
+                {{ template_messages|translate }}
+            </div>
+            {% endif %}
+
+            {% if template_the_errors %}
+            <div class="alert alert-btn-success template_the_errors">
+                {{ template_the_errors|translate }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <form class="text-left" name="loginform" id="loginform{{ template_id }}" action="{{ login_url }}" method="post" role="form">
+                <div class="form-group">
+                    <label for="user_login{{ template_id }}" class="control-label">
+                        {{ 'Username'|translate }} / {{ 'Email'|translate }}
+                    </label>
+                    <input type="text" name="log" id="user_login{{ template_id }}" required class="form-control" value="{{ log }}" size="20" />
+                </div>
+                <div class="form-group">
+                    <label for="user_pass{{ template_id }}" class="control-label">
+                        {{ 'Password'|translate }}
+                    </label>
+                    <input type="password" name="pwd" id="user_pass{{ template_id }}" required class="form-control" value="" size="20" />
+                </div>
+
+                {{ function ('do_action','login_form' ) }}
+
+                <div class="form-group forgetmenot checkbox">
+                    <label for="rememberme{{ template_id }}" class="label-control">
+                        <input name="rememberme" type="checkbox" id="rememberme{{ template_id }}" value="forever" class="checkbox" />
+                        {{ 'Remember Me'|translate }}
+                    </label>
+                </div>
+                <div class="form-group submit text-left">
+                    <button type="submit" name="wp-submit" id="wp-submit{{ template_id }}" class="btn btn-success">
+                        {{ 'Login'|translate }}
+                        <div class="ripple-container"></div>
+                    </button>
+                    {% for link in action_links %}
+                    {% set link_url_redirect = link.url ~ '?redirect_to=' ~ redirect_to %}
+                    <a href="{{ function('esc_url', link_url_redirect) }}">
+                        <span name="{{ link.title }}" id="{{ link.title }}{{ template_id }}" class="btn btn-default">
+                            {{ link.title|translate }}
+                            <div class="ripple-container"></div>
+                        </span>
+                    </a>
+                    {% endfor %}
+                    <input type="hidden" name="redirect_to" value="{{ redirect_to|default(login_redirect_url) }}" />
+                    <input type="hidden" name="instance" value="{{ template_id }}" />
+                    <input type="hidden" name="action" value="login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

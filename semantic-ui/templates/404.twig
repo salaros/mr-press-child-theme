@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content_inner %}
+<main class="ui container middle aligned center aligned grid login">
+
+    <section class="ui eight wide computer   twelve wide tablet   sixteen wide mobile column   left aligned">
+        <h2 class="ui dividing header" data-template="404.twig">
+            {{ 'Page not found'|translate }}
+        </h2>
+
+        <div class="ui items">
+            <div class="item">
+                <div class="ui image">
+                    <i class="icon massive frown"></i>
+                </div>
+                <div class="middle aligned content">
+                    <div class="header">
+                        {{ "Sorry, we couldn't find what you're looking for."|translate }}
+                    </div>
+                    <div class="description">
+                        {{ "The page you were looking for appears to have been moved, deleted or does not exist."|translate }}<br />
+                        {{ "Maybe try one of the links below or a search?"|translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}

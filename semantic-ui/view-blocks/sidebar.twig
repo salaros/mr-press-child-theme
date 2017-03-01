@@ -1,0 +1,25 @@
+<!-- Sidebar menu -->
+<aside class="ui menu vertical inverted sidebar" role="navigation" data-template="sidebar.twig">
+    {% include "menu-items.twig" with { 'menu' : top_left_menu } %}
+
+    <div class="item">
+        <div class="header">{{ 'Access'|translate }}</div>
+        <div class="menu">
+            <a class="item" href="/sign-in">
+                {{ 'Sign in'|translate }}
+            </a>
+            <a class="item" href="/sign-up">
+                {{ 'Sign up'|translate }}
+            </a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="header">{{ 'Languages'|translate }}</div>
+        <div class="menu">
+            <a class="item" href="{{ site.link }}">English</a>
+            <a class="item" href="ru.{{ site.link }}">Russian</a>
+        </div>
+    </div>
+
+</aside>

@@ -1,0 +1,73 @@
+{# login.twig #}
+<section id="theme-my-login{{ template_id }}" class="ui grid   middle center aligned" data-template="login.twig">
+
+    <div class="ui fourteen wide computer   fourteen wide tablet   sixteen wide mobile   form-holder   column">
+
+        <form class="ui segment large form  left aligned" id="loginform{{ template_id }}" action="{{ login_url }}" method="post" role="form">
+
+            <h3 class="ui header  center aligned">
+                <div class="ui divider hidden"></div>
+                {{ 'Log-in to your account'|translate }}
+                <div class="ui divider hidden"></div>
+            </h3>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input name="log" placeholder="{{ 'Username'|translate }} / {{ 'Email'|translate }}" type="text" id="user_login{{ template_id }}" required value="{{ log }}" tabindex="1" />
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input name="pwd" placeholder="{{ 'Password'|translate }}" pwfprops="," type="password" id="user_pass{{ template_id }}" required tabindex="2" />
+                </div>
+            </div>
+
+            {{ function ('do_action','login_form' ) }}
+
+            <div class="ui segment">
+                <div class="field">
+                    <div class="ui slider checkbox">
+                        <input name="rememberme" id="rememberme{{ template_id }}" value="forever" type="checkbox" tabindex="3">
+                        <label for="rememberme">{{ 'Remember Me'|translate }}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center aligned">
+                <div class="field">
+                    <button class="ui large primary right labeled submit icon button" type="submit">
+                        {{ 'Sign in'|translate }}
+                        <i class="icon sign in"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="ui error message"></div>
+
+            {% if template_the_errors %}
+                <div class="ui error message   visible">
+                {{ template_the_errors|translate }}
+                </div>
+            {% endif %}
+
+            {% if template_messages %}
+                <div class="ui info message   visible">
+                {{ template_messages|translate }}
+                </div>
+            {% endif %}
+
+            <input type="hidden" name="redirect_to" value="{{ redirect_to|default(login_redirect_url) }}" />
+            <input type="hidden" name="instance" value="{{ template_id }}" />
+            <input type="hidden" name="action" value="login" />
+        </form>
+
+        <div class="ui message info visible">
+            <i class="icon warning circle medium"></i>
+            New to us? <a href="{{ function('wp_registration_url', login_redirect_url) }}">{{ 'Sign up'|translate }}</a>
+        </div>
+    </div>
+
+</section>

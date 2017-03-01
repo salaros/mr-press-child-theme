@@ -1,0 +1,38 @@
+{% block html_head_container %}
+    {% include 'html-header.twig' %}
+    {% block head %}
+        {# you can add extra head entries, such as meta values etc #}
+        {# by re-defining this block in templates extending base.twig #}
+    {% endblock head %}
+</head>
+{% endblock html_head_container %}
+
+<body class="{{body_class}} site pushable dimmable" ontouchstart="" data-template="base.twig">
+
+    {% block sidebar %}
+        {% include ('sidebar.twig') %}
+    {% endblock %}
+    
+    {% block content %}
+    <div class="pusher" data-template="base.twig">
+        {% block header %}
+            {% include ('header.twig') %}
+        {% endblock header %}
+
+        {% block content_inner %}
+            {{ 'Sorry, no content'|translate }}
+        {% endblock content_inner %}
+
+        {% block footer %}
+            {% include 'footer.twig' %}
+        {% endblock footer %}
+    </div>
+
+    {% endblock content %}
+
+	{{ function('wp_footer') }}
+
+    <!-- Google Analytics -->
+    {% include 'google-analytics.twig' %}
+</body>
+</html>

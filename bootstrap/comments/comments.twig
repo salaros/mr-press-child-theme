@@ -1,0 +1,28 @@
+{% set date_today_raw = "now"|date("Y-m-d H:i:s") %}
+{% set date_today = function('date_create', date_today_raw) %}
+<hr>
+<section class="comments" data-template="comments.twig">
+    <h3 class="h2">{{ 'Comments'|translate }}
+        <span class="badge">{{ post.comment_count }}</span>
+    </h3>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row responses">
+        <div class="col-lg-10 col-sm-12">
+            <div class="list-group media-list center-block">
+                {% for comment in post.get_comments() %}
+                    {% include 'comment.twig' %}
+                {% if post.comments|length > loop.index %}
+                <div class="list-group-separator"></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% if post.comment_status == 'open' %}
+    <div class="row respond">
+        <div class="col-lg-10 col-sm-12">
+            {{ comment_form }}
+        </div>
+    </div>
+    {% endif %}
+</section>

@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content_inner %}
+<main class="ui main container" data-template="archive.twig">
+    <section class="ui doubling stackable three column grid    special cards">
+        {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% endfor %}
+
+        {% block pagination %}
+            {% include 'pagination.twig' %}
+        {% endblock pagination %}
+    </section>
+</main>
+{% endblock %}

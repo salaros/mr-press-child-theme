@@ -1,0 +1,61 @@
+{# register.twig #}
+<div class="register" id="theme-my-login{{ template_id }}" data-template="register.twig">
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            {% if template_messages %}
+            <div class="alert alert-info template_messages">
+                {{ template_messages|translate }}
+            </div>
+            {% endif %}
+
+            {% if template_the_errors %}
+            <div class="alert alert-warning template_the_errors">
+                {{ template_the_errors|translate }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <form name="registerform" id="registerform{{ template_id }}" action="{{ register_url }}" method="post">
+                <!-- TODO: maket username an option (could be created using email + some random string if nickname is already in use) -->
+                <div class="form-group label-floating is-empty">
+                    <label for="user_login{{ template_id }}" class="control-label">
+                        {{ 'Username'|translate }}
+                    </label>
+                    <input type="text" name="user_login" id="user_login{{ template_id }}" value="{{ user_login }}" size="20" class="form-control"required />
+                </div>
+                <!-- /TODO -->
+                <div class="form-group label-floating is-empty">
+                    <label for="user_email{{ template_id }}" class="control-label">
+                        {{ 'E-mail'|translate }}
+                    </label>
+                    <input type="email" name="user_email" id="user_email{{ template_id }}" value="{{ user_email }}" size="20" class="form-control" required />
+                </div>
+
+                {{ function('do_action','register_form') }}
+
+                <div class="form-group submit text-left">
+                    <button type="submit" name="wp-submit" id="wp-submit{{ template_id }}" class="btn btn-success">
+                        {{ 'Register'|translate }}
+                        <div class="ripple-container"></div>
+                    </button>
+                    {% for link in action_links %}
+                    {% set link_url_redirect = link.url ~ '?redirect_to=' ~ redirect_to %}
+                    <a href="{{ function('esc_url', link_url_redirect) }}">
+                        <span name="{{ link.title }}" id="{{ link.title }}{{ template_id }}" class="btn btn-default">
+                            {{ link.title|translate }}
+                            <div class="ripple-container"></div>
+                        </span>
+                    </a>
+                    {% endfor %}
+                    <input type="hidden" name="redirect_to" value="{{ redirect_to|default(register_redirect_url) }}" />
+                    <input type="hidden" name="instance" value="{{ template_id }}" />
+                    <input type="hidden" name="action" value="register" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

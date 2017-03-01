@@ -1,0 +1,103 @@
+{% extends "base.twig" %}
+
+{% block content_inner %}
+<main class="ui main container">
+    
+    <div class="ui main grid   middle center aligned" data-template="single.twig">
+
+        <article class="ui  eight wide widescreen  ten wide large screen  fourteen wide computer  fourteen wide tablet  sixteen wide mobile  column  centered  left aligned " id="post-{{ post.ID }}">
+
+            <section class="ui raised fluid card">
+
+                <header class="ui items  left aligned   very padded text content">
+                    <div class="item author info">
+                        <div class="ui tiny circular image">
+                            <img src="{{ post.author.avatar.src }}" />
+                        </div>
+                        <div class="middle aligned content">
+                            <h1 class="ui header">
+                                {{ post.title }}
+                            </h1>
+                            <div class="meta">
+                                <a class="ui link" href="{{ post.author.link }}">
+                                    by {{ post.author.name }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="meta content">
+                    <div class="ui horizontal mini list">
+                        <div class="item">
+                            <div class="ui basic grey label">
+                                <i class="calendar icon"></i>
+                                <div class="detail">
+                                    {{ post.post_date|date(site.date_format) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="ui basic grey label">
+                                <i class="unhide outline icon"></i>
+                                {% set views_shortcode = '[views id="' ~ post.ID ~ '"]' %}
+                                {{ views_shortcode|shortcodes }}
+                                <div class="detail  ui tablet computer only">
+                                    {{ 'views'|translate }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="ui basic grey label">
+                                <i class="filter icon"></i>
+                                {% set post_terms = post.terms('category') %}
+                                {{ post_terms|length }}
+                                <div class="detail">
+                                    {% for term in post_terms %}
+                                    <a href="{{ term.link }}">
+                                        {{ term.name }}{{ (loop.index != post_terms|length) ? ',' : '' }}
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right floated meta   ui labels">
+                        {% for term in post.terms('tags') %}
+                        <a class="ui {{ loop.index == 1 ? 'tag' : '' }} label" href="{{ term.link }}">
+                            {{ term.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div><!-- /.content -->
+
+                <div class="very padded justified text content">
+                    <div class="description">
+                        {{ post.content }}
+                    </div><!-- /.description -->
+                </div><!-- /.content -->
+
+            </section><!-- /.card -->
+
+            <div class="ui divider hidden"></div>
+
+            <section class="ui raised fluid card">
+                <div class="very padded text content">
+                    <h3 class="ui header">
+                        {{ 'Comments'|translate }}    
+                    </h3>
+                </div>
+                <div class="very padded text content">
+                {% block comments %}
+                    {% include 'comments.twig' %}
+                {% endblock comments %}
+                </div>
+            </section><!-- /.card -->
+
+        </article><!-- /.column -->
+
+    </div>
+
+</main>
+{% endblock %}

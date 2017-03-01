@@ -1,0 +1,72 @@
+<article class="comment-body media parent {{ comment.comment_type }} comment-order-{{ loop.index }}" data-template="comment.twig">
+    <div class="media-left pull-left">
+        {% set comment_author_url = fn('get_comment_author_url', comment.id) %}
+        {% if (comment_author_url) %}
+        <a href="{{ comment_author_url }}" class="author-link url" rel="external nofollow">
+        {% endif %}
+            <figure class="thumbnail">
+                <img alt="{{ comment.author.name }}" src="{{ comment.author.avatar.abs_url }}" class="avatar media-object img-responsive avatar-96 photo" width="96" />
+                <figcaption class="text-center">
+                    <small>{{ comment.author.name }}</small>
+                </figcaption>
+            </figure>
+        {% if (comment_author_url) %}
+        </a>
+        {% endif %}
+    </div>
+
+    {% set comment_date_obj = function('date_create', comment.comment_date) %}
+    {% set comment_date_universal = comment.comment_date|date('Y-m-d H:i:s') %}
+    {% set date_days_diff_obj = function('date_diff', comment_date_obj, date_today) %}
+    {% set date_days_diff_str = (date_days_diff_obj.format('%d') == '0' and comment_date_obj.format('d') == date_today.format('d'))
+    ? comment.comment_date|date(site.time_format)
+    : comment.comment_date|date(site.date_format)
+    %}
+    <div class="media-body">
+        <div class="panel panel-default">
+            <header class="panel-heading comment-meta text-left clearfix">
+                <div class="comment-author vcard pull-left">
+                    <h5 class="media-heading fn">
+                        {{ comment.author.name }} <span class="says sr-only">{{ 'says'|translate }}:</span>
+                        <small class="text-muted">
+                            <time class="comment-metadata comment-date" datetime="{{ comment_date_universal }}" title="{{ comment_date_universal }}">
+                                <i class="glyphicon glyphicon-time"></i>
+                                {{ date_days_diff_str }}
+                            </time>
+                        </small>
+                    </h5>
+                </div>
+                <div class="pull-right">
+                    <span class="btn btn-default btn-xs comment-reply-link" onclick="return addComment.moveForm( 'comment-{{ comment.ID }}', '{{ comment.ID }}', 'respond', '{{ post.ID }}')" aria-label="{{ 'Reply to'|translate ~ ' ' ~ comment.author.name }}">
+                        <i class="glyphicon glyphicon-share-alt"></i>
+                        {{ 'Reply'|translate|lower }}
+                    </span>
+                </div>
+            </header>
+
+            <div class="comment-content comment-post panel-body">
+                {{comment.comment_content|wpautop}}
+            </div>
+        </div>
+
+        <div id="comment-{{ comment.ID }}">
+        </div>
+
+        {% if comment.children %}
+        <div class="child-comments">
+            {% for comment in comment.children %}
+            <div class="clearfix"></div>
+            <!-- Nested Comment -->
+            {% include 'comment.twig' %}
+            {% if comment.children|length > loop.index %}
+            <!-- THEME SEPARATOR -->
+            {% endif %}
+            <!-- End Nested Comment -->
+            {% endfor %}
+        </div><!-- /.child-comments -->
+        {% endif %}
+
+    </div><!-- /.media-body -->
+
+
+</article><!-- /.comment-body -->

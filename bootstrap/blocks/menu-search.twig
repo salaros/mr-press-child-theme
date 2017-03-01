@@ -1,0 +1,12 @@
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        {% set search_placeholder = 'Search for:'|translate('label')|replace({':': ''}) %}
+        <label class="sr-only" for="s">
+            {{ search_placeholder }}
+        </label>
+        <input name="s" id="s" class="form-control" placeholder="{{ search_placeholder }}" type="text" autocomplete="off" />
+    </div>
+    <button type="submit" class="btn btn-default">
+        {{ 'Search'|translate }}
+    </button>
+</form>

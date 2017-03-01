@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="post-type-{{post.post_type}} col-xs-12" id="post-{{post.ID}}" data-template="single.twig">
+    <section class="article-content">
+        <h2 class="article-h2">{{post.title}}</h2>
+        {% include 'single-meta.twig' %}
+        <hr>
+        <div class="article-body">
+            {% if post.thumbnail and post.thumbnail.src %}
+            <img src="{{post.thumbnail.src}}" class="post-thumb img-responsive" alt="{{ post.title }}">
+            <hr>
+            {% endif %}
+            <p>
+                {{post.content}}
+            </p>
+        </div>
+    </section>
+    {% include 'comments.twig' %}
+</article>
+{% endblock %}

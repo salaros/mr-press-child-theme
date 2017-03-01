@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block title %}
+<h2 class="header text-left col-xs-12" data-template="404.twig">
+    {{ 'Page not found'|translate }}
+    <hr />
+</h2>
+{% endblock %}
+
+{% block content %}
+<article class="page-404 col-xs-12" id="page-404" data-template="404.twig">
+    <section class="article-content">
+    {{ "Sorry, we couldn't find what you're looking for."|translate }}
+    </section>
+</article>
+{% endblock %}

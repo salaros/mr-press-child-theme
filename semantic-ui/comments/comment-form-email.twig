@@ -1,0 +1,7 @@
+    <div class="field">
+        <label for="author">{{ 'Email'|translate }}</label>
+        <div class="ui left icon input">
+            <i class="at icon"></i>
+            <input id="author" name="author" placeholder="{{ 'Email'|translate }}"type="text" value="{{ author_url }}" {{ (require_name_email) ? ' required ' : '' }} />
+        </div>
+    </div>

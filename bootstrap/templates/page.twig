@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="post-type-{{ post.post_type }} col-xs-12" id="page-{{ post.ID }}" data-template="page.twig">
+    <section class="article-content">
+        {% if post.title %}
+        <h2 class="article-h2 page-title">
+            {{ post.title }}
+        </h2>
+        {% endif %}
+        <div class="article-body">
+            {% if function('have_posts') %}
+                {% set post = function('the_post') %}
+                {{ function('the_content') }}
+            {% endif %}
+        </div>
+    </section>
+</article>
+{% endblock %}

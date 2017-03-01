@@ -1,0 +1,50 @@
+{% set comment_author_url = (comment.author.ID and not fn('get_comment_author_url', comment.id))
+    ? fn('get_author_posts_url', comment.author.ID)
+    : fn('get_comment_author_url', comment.id)
+ %}
+{% set comment_date_obj = function('date_create', comment.comment_date) %}
+{% set comment_date_universal = comment.comment_date|date('Y-m-d H:i:s') %}
+{% set date_days_diff_obj = function('date_diff', comment_date_obj, date_today) %}
+{% set date_days_diff_str = (date_days_diff_obj.format('%d') == '0' and comment_date_obj.format('d') == date_today.format('d'))
+    ? comment.comment_date|date(site.time_format)
+    : comment.comment_date|date(site.date_format)
+%}
+
+<div class="comment {{ comment.comment_type }} comment-order-{{ loop.index }}" data-template="comment.twig">
+    <a class="avatar" {{ comment_author_url ? 'href="' ~ comment_author_url ~ '"' : '' }}>
+        <img alt="{{ comment.author.name }}" src="{{ comment.author.avatar.abs_url }}" />
+    </a><!-- /.avatar -->
+    <div class="content">
+        <a class="author" {{ comment_author_url ? 'href="' ~ comment_author_url ~ '"' : '' }}>
+            {{ comment.author.name }}
+        </a><!-- /.actions -->
+        <div class="metadata">
+            <span class="date">
+                <i class="clock icon"></i>
+                {{ date_days_diff_str }}
+            </span><!-- /.date -->
+        </div><!-- /.metadata -->
+        <div class="text">
+            {{comment.comment_content|wpautop}}
+        </div><!-- /.text -->
+        <div class="actions">
+            <a class="reply" onclick="return addComment.moveForm( 'comment-{{ comment.ID }}', '{{ comment.ID }}', 'respond', '{{ post.ID }}')">
+                <i class="reply icon"></i>
+                {{ 'Reply'|translate }}
+            </a>
+        </div><!-- /.actions -->
+    </div><!-- /.comment -->
+
+    <span id="comment-{{ comment.ID }}"></span>
+
+    {% if comment.children %}
+    <div class="comments">
+        {% for comment in comment.children %}
+            <!-- Nested Comment -->
+            {% include 'comment.twig' %}
+            <!-- End Nested Comment -->
+        {% endfor %}
+    </div><!-- /.comments -->
+    {% endif %}
+
+</div>

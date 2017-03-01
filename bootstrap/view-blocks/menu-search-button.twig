@@ -1,0 +1,46 @@
+<ul class="nav navbar-nav navbar-right nav-search-from" data-template="menu-search-button.twig">
+    <li class="dropdown hidden-xs">
+        <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-search">
+            <li>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form" role="form" accept-charset="UTF-8" role="search">
+                            <div class="form-group input-group">
+                                {% set search_placeholder = 'Search for:'|translate('label') %}
+                                <span class = "input-group-addon">
+                                    {{ search_placeholder }}
+                                </span>
+                                <input name="s" id="s" class="form-control" type="text" autocomplete="off" />
+                                <span class = "input-group-btn">
+                                    <button type="submit" class="btn btn-primary" title="{{ 'Search'|translate }}">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li class="hidden-sm hidden-md hidden-lg">
+        <form class="col-xs-12" role="search">
+            <div class="form-group input-group">
+                {% set search_placeholder = 'Search for:'|translate('label')|replace({':': ''}) %}
+                <input name="s" id="s" class="form-control" placeholder="{{ search_placeholder }}" type="text" autocomplete="off" />
+                <label class="sr-only" for="s">
+                    {{ search_placeholder }}
+                </label>
+                <span class = "input-group-btn">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-search"></i>
+                        {{ 'Search'|translate }}
+                    </button>
+                </span>
+            </div>
+        </form>
+    </li>
+</ul>

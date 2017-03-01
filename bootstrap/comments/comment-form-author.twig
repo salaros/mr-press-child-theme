@@ -1,0 +1,4 @@
+<div class="form-group comment-form-author form-control-wrapper label-floating {{ (author_name) ? 'empty' : '' }}">
+    <label for="author" class="control-label">{{ 'Name'|translate }} {{ (require_name_email) ? '*' : '' }}</label>
+    <input class="form-control" id="author" name="author" type="text" autocomplete="off" value="{{ author_name }}" size="30" {{ (require_name_email) ? ' aria-required="true" required ' : '' }} />
+</div>

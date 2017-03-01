@@ -1,0 +1,8 @@
+<div class="three fields">
+    <div class="field">
+        <label>{{ 'Name'|translate }}</label>
+        <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input id="author" name="author" placeholder="{{ 'Name'|translate }}"type="text" value="{{ author_url }}" {{ (require_name_email) ? ' required ' : '' }} />
+        </div>
+    </div>
