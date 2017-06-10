@@ -1,14 +1,25 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "phpcs.standard": "WordPress-Extra",
+    // PHP Mess Detector settings
+	"phpmd.enabled": true,
+    "phpmd.validate.rulesetsFile": ".vscode/phpmd.xml",
+	"phpmd.validate.rulesets": "cleancode,codesize,controversial,design,naming,unusedcode",
+
+    // PHP CodeSniffer settings
+    "phpcs.enable": true,
+    "phpcs.standard": ".vscode/phpcs.xml",
+
+    // Exclude files from File Explorer
     "files.exclude": {
-        "**/*.bak*":    true,
-        "**/*.css.map": true,
+        "**/*.bak*":    true, 
+        "**/*.css.map": true, 
         "**/vendor":    true
     },
-    "less.compile": {
-        "compress":  false,  // true => remove surplus whitespace
-        "sourceMap": true,   // true => generate source maps (.css.map files)
-        "out":       true    // true => output .css files (overridable per-file, see below)
+
+    // LESS-related settings
+    "less.compile": { 
+        "compress":  false,  // true => remove surplus whitespace 
+        "sourceMap": true,   // true => generate source maps (.css.map files) 
+        "out":       true    // true => output .css files (overridable per-file, see below) 
     }
 }
