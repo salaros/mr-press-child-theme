@@ -1,3 +1,7 @@
 /vendor
 *.css.map
-mr-press.css
+*-*x*-c-*.png
+*-*x*-c-*.jpeg
+*-*x*-c-*.jpg
+*-*x*-c-*.gif
+*.bak
