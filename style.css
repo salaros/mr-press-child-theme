@@ -11,10 +11,3 @@ Template:           mr-press-theme
 Text Domain:        mr-press-child-theme
 Version:            0.1.0
 */
-
-html,
-body {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-}

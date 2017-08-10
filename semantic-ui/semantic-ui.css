@@ -1,0 +1,266 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body.pushable {
+  background: #eee !important;
+}
+body.pushable > .pusher {
+  background: #eee !important;
+}
+/* Sticky footer */
+body.pushable > .pusher {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+body.pushable > .pusher > main.container {
+  flex: 1;
+}
+.ui.footer.segment {
+  padding: 2em 0em;
+}
+/* ------  RECAPTCHA STYLING  ------ */
+.g-recaptcha-outer {
+  text-align: center;
+  padding: 0.1em !important;
+}
+.g-recaptcha-inner {
+  width: 154px;
+  height: 82px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.g-recaptcha {
+  position: relative;
+  left: -2px;
+  top: -1px;
+}
+/* ------  BLOG TEMPLATE STYLING  ------ */
+.blog .ui.card .header + .meta {
+  padding: 1em 0 0.5em 0;
+}
+.blog .main.container {
+  padding-top: 5em !important;
+  padding-bottom: 2em !important;
+}
+/* ------  SINGLE TEMPLATE STYLING  ------ */
+.single {
+  /* Fixng comments not being fluid */
+}
+.single .ui.main.grid {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.single article {
+  margin-top: -30rem !important;
+}
+.single article > header {
+  margin: 0 !important;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 7px;
+}
+.single article > section.card {
+  margin: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  /* Fix tag labels being higher than other meta items */
+}
+.single article > section.card > .meta.content > .labels {
+  padding-top: .21428571em;
+}
+.single article > header.ui.items > .item.author {
+  padding: 3em 2em;
+}
+.single .ui.comments {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+/* In Semantic UI secondary menu (we are obligated to use) */
+.ui.menu.top.fixed.secondary.pointing {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: opacity;
+  background-color: #fff;
+}
+.ui.menu.top.fixed.secondary.pointing > .ui.container > .menu.right {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+.ui.menu .ui.button.call-us {
+  font-weight: bold !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+.ui.menu.top.fixed .ui.button.call-us {
+  display: none !important;
+}
+.ui.menu.home > .item > a {
+  position: relative;
+}
+.ui.menu.home > .item:not(.active) > a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  top: 2.16em;
+  left: -1em;
+  right: -1em;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  will-change: transform;
+}
+.ui.menu.home > .item:not(.active) > a:hover::after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  will-change: transform;
+}
+.ui.menu.home > .menu.right {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+/* Hide hidden menu :) and "hamburger" icon when needed */
+.ui.menu.hidden {
+  display: none;
+}
+.ui.menu.secondary.pointing .toc.item {
+  display: none;
+}
+.ui.menu.fixed > .ui.container > .menu.right {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+/* Allow column cards to be displayed correctly */
+.ui.card.column {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/* Allow very padded text on cards */
+.ui.card > .very.padded.text.content {
+  padding: 2em !important;
+}
+/* Justify text, haven't found an easy way of accomplishing it in Semantic UI */
+.justified.text {
+  text-align: justify;
+}
+/* Text in inverted items MUST stay white */
+.ui.items > .item > .content .inverted {
+  color: #fff !important;
+}
+@media only screen and (max-width: 767px) {
+  .single {
+    /* Make label details look more compact on mobile */
+  }
+  .single article > section.card > .meta.content > .list {
+    float: left !important;
+    width: 100%;
+    text-align: center;
+  }
+  .single article > section.card > .meta.content > .labels {
+    float: left !important;
+    width: 100%;
+    text-align: center;
+  }
+  .single .ui.card > .meta.very.padded.text.content {
+    padding: 1em 0 !important;
+  }
+  .single .ui.card > .meta * {
+    margin-right: .05em !important;
+  }
+  .single .ui.card > .meta .ui.small.label {
+    font-size: 0.75em !important;
+  }
+  .single .ui.card > .meta .ui.small.labels .label {
+    font-size: 0.75em !important;
+  }
+  .single .ui.cards > .card .meta * {
+    margin-right: .05em !important;
+  }
+  .single .ui.comments .comment .comments {
+    margin: 0 0 .3em .3em;
+    padding: 1em 0.3em;
+  }
+  .ui.menu.secondary.pointing > .item {
+    display: none !important;
+  }
+  .ui.menu.secondary.pointing > .ui.container > .item {
+    display: none !important;
+  }
+  .ui.menu.secondary.pointing > .ui.container > .item.toc {
+    display: block !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .ui.menu.secondary.pointing > .item.toc {
+    display: block !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .ui.menu.top.fixed.secondary.pointing {
+    padding: 0.2em 1em !important;
+    background-color: #1B1C1D !important;
+  }
+  .ui.menu.top.fixed.secondary.pointing .ui.inverted.button {
+    box-shadow: 0 0 0 2px #fff inset !important;
+    border-color: #fff !important;
+    color: #fff !important;
+  }
+  .ui.menu.top.fixed.secondary.pointing .ui.inverted.button:hover {
+    background-color: #fff !important;
+    color: #1B1C1D !important;
+  }
+  /* Enforce a more premissive "tablet/computer only" mode (in terms of class prerequisites) */
+  .ui[class*="tablet only"]:not(.mobile) {
+    display: none !important;
+  }
+  /* Enforce a more premissive "tablet/computer only" mode (in terms of class prerequisites) */
+  .ui[class*="computer only"]:not(.mobile) {
+    display: none !important;
+  }
+  .ui.label > .detail {
+    margin-left: 0.2em;
+  }
+  /* Allow very padded text on cards on mobile */
+  .ui.card > .very.padded.text.content {
+    padding: 1.5em !important;
+  }
+  /* Fix text area fields on mobile */
+  .field > textarea {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .single article > section.card > .meta.content > .list {
+    float: left !important;
+    width: 100%;
+  }
+  .single article > section.card > .meta.content > .labels {
+    float: left !important;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .single article > section.card > .meta.content > .list {
+    margin: 0;
+  }
+  .single article > header.ui.items > .item.author.info {
+    margin: 0;
+  }
+}
+/* Enforce a more premissive "computer only" mode (in terms of class prerequisites) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .ui[class*="computer only"]:not(.tablet) {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=./semantic-ui.css.map */

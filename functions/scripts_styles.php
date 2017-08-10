@@ -17,18 +17,17 @@ switch ( $site->ui_toolkit ) {
 		$site->assets->add_script( 'html5shiv', sprintf( '%s/html5shiv/dist/html5shiv.min.js', $bower_url ), [], '3.7.3', false, [ 'conditional' => 'lt IE 9' ] );
 		$site->assets->add_script( 'bootstrap', sprintf( '%s/bootstrap/dist/js/bootstrap.min.js', $bower_url ), [ 'jquery' ], '3.3.7', true );
 		$site->assets->add_style( 'bootstrap', sprintf( '%s/bootstrap/dist/css/bootstrap.min.css', $bower_url, [ 'normalize' ] ) );
-		$site->assets->add_script( 'mr-press', sprintf( '%s/%s/mr-press.js', $site->theme->link, $site->ui_toolkit ), [ 'bootstrap' ], null, true );
-		$site->assets->add_style( 'mr-press', sprintf( '%s/%s/mr-press.css', $site->theme->link, $site->ui_toolkit ), [ 'bootstrap' ] );
 		break;
 
 	case 'semantic-ui':
 		$site->assets->add_script( 'semantic-ui', sprintf( '%s/semantic/dist/semantic.min.js', $bower_url ), [ 'jquery' ], '2.2.9', true );
 		$site->assets->add_style( 'semantic-ui', sprintf( '%s/semantic/dist/semantic.min.css', $bower_url ), [ 'normalize' ] );
-		$site->assets->add_script( 'mr-press', sprintf( '%s/%s/mr-press.js', $site->theme->link, $site->ui_toolkit ), [ 'semantic-ui' ], null, true );
-		$site->assets->add_style( 'mr-press', sprintf( '%s/%s/mr-press.css', $site->theme->link, $site->ui_toolkit ), [ 'semantic-ui' ] );
 		break;
 
 	default:
 		trigger_error( sprintf( 'Unknown UI kit, please edit "%s" file', realpath( __FILE__ ) ) );
 		break;
 }
+
+$site->assets->add_script( 'mr-press', sprintf( '%s/%s/%s.js', $site->theme->link, $site->ui_toolkit, $site->ui_toolkit ), [ $site->ui_toolkit ], null, true );
+$site->assets->add_style( 'mr-press', sprintf( '%s/%s/%s.css', $site->theme->link, $site->ui_toolkit, $site->ui_toolkit ), [ $site->ui_toolkit ] );
