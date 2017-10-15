@@ -34,12 +34,11 @@
 	</section>
 
 	{% block footer %}
-	   {% include 'footer.twig' %}
+	    {% include 'footer.twig' %}
 	{% endblock %}
 
 	{{ function('wp_footer') }}
 
-    <!-- Google Analytics -->
-    {% include 'google-analytics.twig' %}
+    {% include 'tracking-n-analytics.twig' %}
 </body>
 </html>
