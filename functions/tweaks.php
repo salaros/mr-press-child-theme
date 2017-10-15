@@ -1,10 +1,5 @@
 <?php
 
-// Enable Timber (Twig) cache on non-production environments
-if ( class_exists( 'Timber' ) ) {
-	Timber::$cache = false; // (WP_ENV === 'production');
-}
-
 // Remove the following meta tag:  <meta name="generator" content="WordPress X.X" />
 add_filter( 'the_generator', '__return_null' );
 
