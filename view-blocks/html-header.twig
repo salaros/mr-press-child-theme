@@ -14,7 +14,7 @@
     <link rel="icon" href="{{site.theme.link}}/static/images/favicon.ico" type="image/x-icon">
 
     <!-- SEO stuff -->
-    <title>{{ (wp_title) ? wp_title|translate ~ ' - ' ~ site.name : site.name }}</title>
+    <title>{{ (wp_title()|default(site.name))|translate }}</title>
     <meta name="description" content="{{site.description}}">
     <!-- SEO stuff -->
 
