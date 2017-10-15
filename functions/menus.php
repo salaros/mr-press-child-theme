@@ -10,6 +10,6 @@ $menu_items[] = [
 	'children' => [
 		[ 'title' => translate( 'Google' ), 'url' => 'http://google.com' ],
 		[ 'title' => translate( 'Bing' ), 'url' => 'http://bing.com' ],
-	]
+	],
 ];
 $site->add_menu( 'top-nav-menu', $menu_items );
