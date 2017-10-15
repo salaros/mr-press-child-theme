@@ -12,11 +12,22 @@ add_filter( 'the_generator', '__return_null' );
 remove_action( 'wp_head', 'qtranxf_wp_head_meta_generator' );
 
 // Remove 'ver' query var from script and style URLs
-function remove_ver_query_for_scripts_and_styles( $url ) {
+function mr_press_remove_ver_query_for_scripts_and_styles( $url ) {
 
 	return ( stripos( $url, 'ver=' ) )
 		? remove_query_arg( 'ver', $url )
 		: $url;
 }
-add_filter( 'style_loader_src', 'remove_ver_query_for_scripts_and_styles', 999 );
-add_filter( 'script_loader_src', 'remove_ver_query_for_scripts_and_styles', 999 );
+add_filter( 'style_loader_src', 'mr_press_remove_ver_query_for_scripts_and_styles', 999 );
+add_filter( 'script_loader_src', 'mr_press_remove_ver_query_for_scripts_and_styles', 999 );
+
+add_action( 'init', function() use ( $site ) {
+	// Remove Emoji detection (for it's poor implementation)
+	$site->remove_emoji_detection();
+
+	// Disable Embeds in WordPress
+	$site->remove_embeds();
+
+	// Remove admin bar for non-admin users
+	$site->hide_admin_bar_for_users();
+} );
