@@ -18,6 +18,7 @@ require_once 'functions/taxonomies.php';
 require_once 'functions/theme_support.php';
 require_once 'functions/tweaks.php';
 require_once 'functions/context.php';
+require_once 'functions/twig.php';
 
 if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 	include_once 'functions/ajax.php';
