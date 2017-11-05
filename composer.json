@@ -14,7 +14,7 @@
     "repositories"      : [
         {
             "type"      : "composer",
-            "url"       : "http://wpackagist.org"
+            "url"       : "https://wpackagist.org"
         }
     ],
     "require": {
@@ -28,10 +28,6 @@
         "wpackagist-plugin/wp-postviews"                        : "*"
     },
     "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library"             : "../../npm-asset",
-            "bower-asset-library"           : "../../bower-asset"
-        },
         "installer-paths": {
             "../../plugins/{$name}/"        : [
                 "type:wordpress-plugin"
@@ -44,6 +40,12 @@
     "minimum-stability"                     : "stable",
     "prefer-stable"                         : true,
     "config" : {
-        "secure-http"                       : false
+        "secure-http"                       : false,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library"             : "../../npm-asset",
+                "bower-asset-library"           : "../../bower-asset"
+            }
+        }
     }
 }
